@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['web-production-066e.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['http://web-production-066e.up.railway.app']
 
 
 # Application definition
