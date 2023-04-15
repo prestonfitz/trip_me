@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Trip(models.Model):
+'''class Trip(models.Model):
 
     city = models.CharField(max_length=20)
     state = models.CharField(max_length=20, blank=True)
@@ -10,4 +10,4 @@ class Trip(models.Model):
     
 
     def __str__(self):
-        return (self.city)
+        return (self.city)'''
