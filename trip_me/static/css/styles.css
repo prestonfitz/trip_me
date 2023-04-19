@@ -3791,6 +3791,7 @@ textarea.form-control-lg {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.55);
 }
 .navbar-nav .show > .nav-link,
 .navbar-nav .nav-link.active {
