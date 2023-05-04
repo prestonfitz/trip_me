@@ -9,3 +9,11 @@ def indexPageView(request):
         "ti" : ti
     }
     return render(request, 'travelPages/index.html',context)
+
+def tripsPageView(request) :
+    ti = tripInfo.objects.all()
+
+    context = {
+        "ti" : ti
+    }
+    return render(request, 'travelPages/trips.html',context)
