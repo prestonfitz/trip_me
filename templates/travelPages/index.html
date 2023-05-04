@@ -39,6 +39,8 @@
                 <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
             <div class="row">
+                {% for oTrips in ti %}
+                {% if forloop.counter0 < 6 %}
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <!-- Portfolio item 1-->
                     <div class="portfolio-item">
@@ -46,89 +48,20 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{% static 'img/charleston.jpeg' %}" alt="Capital Building, Charleston, West Virginia" />
+                            <img class="img-fluid" src="{% static 'img/' %}{{oTrips.picture}}" alt="Capital Building, Charleston, West Virginia" />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Charleston</div>
-                            <div class="portfolio-caption-subheading text-muted">West Virginia</div>
+                            <div class="portfolio-caption-heading">{{oTrips.city}}</div>
+                            {% if oTrips.country == "United States" %}
+                            <div class="portfolio-caption-subheading text-muted">{{oTrips.state}}</div>
+                            {% else %}
+                            <div class="portfolio-caption-subheading text-muted">{{oTrips.country}}</div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 2-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'img/las_vegas.jpg' %}" alt="The Bellagio, Las Vegas, Nevada" />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Las Vegas</div>
-                            <div class="portfolio-caption-subheading text-muted">Nevada</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 3-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'img/carter.jpg' %}" alt="Carter Caves State Park, Kentucky" />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Carter County</div>
-                            <div class="portfolio-caption-subheading text-muted">Kentucky</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                    <!-- Portfolio item 4-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'img/san_miguel.jpg' %}" alt="Sibul River, San Miguel, Philippines" />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">San Miguel</div>
-                            <div class="portfolio-caption-subheading text-muted">Philippines</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                    <!-- Portfolio item 5-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'img/seattle.jpg' %}" alt="The Space Needle, Seattle, Washington" />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Seattle</div>
-                            <div class="portfolio-caption-subheading text-muted">Washington</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <!-- Portfolio item 6-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'img/london.JPG' %}" alt="St. Paul's Cathedral, London, England" />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">London</div>
-                            <div class="portfolio-caption-subheading text-muted">England</div>
-                        </div>
-                    </div>
-                </div>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
     </section>
