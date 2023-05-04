@@ -11,6 +11,7 @@ class tripInfo(models.Model):
     length = models.IntegerField(default=0)
     cost = models.FloatField(default=0.00)
     picture = models.CharField(max_length=30)
+    alt = models.CharField(max_length=100,null=True)
 
     def __str__(self):
         return self.location
