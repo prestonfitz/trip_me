@@ -17,7 +17,7 @@
 {% endblock %}
 
 {% block Masthead %}
-<header class="masthead" style="background-image: url('{% static "img/" %}{{ti.picture}}')" alt="The New River Gorge Bridge as viewed from Long Point">
+<header class="masthead" style="background-image: url('{% static "img/" %}{{ti.picture}}')" alt="{{ti.alt}}">
     <div class="container">
         <div class="masthead-subheading" style="text-shadow: 2px 2px black">Your One Stop to the Rest of the World</div>
         <div class="masthead-heading text-uppercase" style="text-shadow: 2px 2px black">Trip Me Travel</div>
@@ -36,6 +36,32 @@
                 <h2 class="section-heading text-uppercase">{{ti.city}}, {{ti.country}}</h2>
             {% endif %}
             <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            {{ti.description}}
+            <br><br>
+            <table class="table-center">
+                <tr>
+                    <td><b>City</b></td>
+                    <td>{{ti.city}}</td>
+                </tr>
+                {% if ti.state != NULL %}
+                <tr>
+                    <td><b>State/province</b></td>
+                    <td>{{ti.state}}</td>
+                </tr>
+                {% endif %}
+                <tr>
+                    <td><b>Country</b></td>
+                    <td>{{ti.country}}</td>
+                </tr>
+                <tr>
+                    <td><b>Cost</b></td>
+                    <td>${{ti.cost}}</td>
+                </tr>
+                <tr>
+                    <td><b>Number of days</b></td>
+                    <td>{{ti.length}}</td>
+                </tr>
+            </table>
         </div>
     </div>
 </section>
