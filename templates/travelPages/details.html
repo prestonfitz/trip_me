@@ -23,8 +23,14 @@
 {% block Masthead %}
 <header class="masthead" style="background-image: url('{% static "img/" %}{{ti.picture}}')" alt="{{ti.alt}}">
     <div class="container">
-        <div class="masthead-subheading" style="text-shadow: 2px 2px black">Your One Stop to the Rest of the World</div>
-        <div class="masthead-heading text-uppercase" style="text-shadow: 2px 2px black">Trip Me Travel</div>
+        <div class="masthead-subheading" style="text-shadow: 2px 2px black">Get ready to visit</div>
+        <div class="masthead-heading text-uppercase" style="text-shadow: 2px 2px black">
+            {% if ti.country == "United States" %}
+                {{ti.city}}, {{ti.state}}
+            {% else %}
+                {{ti.city}}, {{ti.country}}
+            {% endif %}
+        </div>
         <a class="btn btn-primary btn-xl text-uppercase" href="#portfolio">Take me to {{ti.city}}</a>
     </div>
 </header>
