@@ -17,3 +17,13 @@ def tripsPageView(request) :
         "ti" : ti
     }
     return render(request, 'travelPages/trips.html',context)
+
+def detailsPageView(request, id):
+
+   ti=tripInfo.objects.get(id=id)
+
+   context = {
+      "ti" : ti
+   }
+
+   return render(request,'travelPages/details.html', context)

@@ -6,7 +6,13 @@
 <title>Trip Me Travel - Your One Stop to the Rest of the World</title>
 {% endblock %}
 {% block Masthead %}
-    <a class="btn btn-primary btn-xl text-uppercase" href="#portfolio">Tell Me More</a>
+<header class="masthead" style="background-image: url('{% static "img/new_river_bridge.jpg" %}')" alt="The New River Gorge Bridge as viewed from Long Point">
+    <div class="container">
+        <div class="masthead-subheading" style="text-shadow: 2px 2px black">Your One Stop to the Rest of the World</div>
+        <div class="masthead-heading text-uppercase" style="text-shadow: 2px 2px black">Trip Me Travel</div>
+        <a class="btn btn-primary btn-xl text-uppercase" href="#portfolio">Tell Me More</a>
+    </div>
+</header>
 {% endblock %}
 {% block content %}
 
@@ -223,8 +229,7 @@
                                     </li>
                                 </ul>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Close Trip
+                                    <a class="btn btn-primary btn-xl text-uppercase" href="{% url 'travelPages:details' id=oTrips.id %}">See more details</a>
                                 </button>
                             </div>
                         </div>
