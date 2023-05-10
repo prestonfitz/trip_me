@@ -3,7 +3,11 @@
 {% block meta %}
 <meta name="description" content="A mock travel website, hosting trips to places that the author has been" />
 <meta name="author" content="Preston Fitzgerald" />
-<title>Trip to  | Trip Me Travel</title>
+{% if ti.country == "United States" %}
+    <title>Trip to {{ti.city}}, {{ti.state}} | Trip Me Travel</title>   
+{% else %}
+    <title>Trip to {{ti.city}}, {{ti.country}} | Trip Me Travel</title>
+{% endif %}
 {% endblock %}
 
 {% block nav %}
